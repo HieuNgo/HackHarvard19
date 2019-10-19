@@ -29,12 +29,6 @@ class WalletScreen extends Component{
     };
 
   render () {
-    let icon = this.icons[icon];
-    if(this.state.expanded){
-      icon = this.icons[icon];   //Step 4
-    } else {
-      icon = null
-    }
     return (
       <>
         <View style = {styles.titleBackground}>
@@ -60,7 +54,6 @@ class WalletScreen extends Component{
 
               <Image
                   style={styles.buttonImage}
-                  source={icon}
               ></Image>
             </View>
           </View>

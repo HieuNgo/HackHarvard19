@@ -26,7 +26,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import CreditAdvisorScreen from './CreditAdvisor';
+import StartSavingScreen from './StartSaving';
 import SettingsScreen from './Settings';
 import WalletScreen from './Wallet';
 import PointsSaverScreen from './PointsSaver';
@@ -80,11 +80,18 @@ const styles = StyleSheet.create({
   },
 });
 const MainNavigator = createBottomTabNavigator({
-  "Credit Card Choosing": {screen: CreditAdvisorScreen},
+  "Credit Card Choosing": {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
   Points: {screen: PointsSaverScreen},
   Settings: {screen: SettingsScreen}
 });
+
+const StackNavigator = createStackNavigator({
+  StartSaving: {screen: StartSavingScreen},
+  Wallet: {screen: WalletScreen},
+  Points: {screen: PointsSaverScreen},
+  Settings: {screen: SettingsScreen}
+  })
 
 const App = createAppContainer(MainNavigator);
 
