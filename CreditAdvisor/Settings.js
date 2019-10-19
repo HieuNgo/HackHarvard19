@@ -101,6 +101,7 @@ class SettingsScreen extends Component{
 const styles = StyleSheet.create({
   title: {
     fontSize: 40,
+    marginTop: 60,
     textAlign: "center",
     color: "cornflowerblue",
   },
@@ -108,7 +109,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   button: {
-      margin: 10,
+    marginTop: 60,
+    margin: 10,
   },
 });
 

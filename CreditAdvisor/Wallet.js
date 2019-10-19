@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 40,
     textAlign: "center",
+    marginTop: 60,
     color: "cornflowerblue",
   },
   titleBackground: {
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
   },
   button: {
       margin: 30,
+      marginTop: 60,
   },
   buttonImage: {},
 });

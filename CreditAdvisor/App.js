@@ -27,8 +27,10 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import StartSavingScreen from './StartSaving';
+import HomeyScreen from './Home';
 import SettingsScreen from './Settings';
 import WalletScreen from './Wallet';
+import PurchaseHistoryScreen from './PurchaseHistory';
 import PointsSaverScreen from './PointsSaver';
 import RankingScreen from './Ranking';
 import CreditCardsScreen from './CreditCards';
@@ -93,6 +95,8 @@ const MainNavigator = createBottomTabNavigator({
   CreditCards: {screen: CreditCardsScreen},
   CCForm: {screen: CCFormScreen}
 
+  Home: {screen: HomeyScreen},
+  PurchaseHistory: {screen: PurchaseHistoryScreen},
 });
 
 const StackNavigator = createStackNavigator({
@@ -106,7 +110,7 @@ const StackNavigator = createStackNavigator({
 
   })
 
-const App = createAppContainer(MainNavigator);
+const App = createAppContainer(MainNavigator, StackNavigator);
 
 
 export default App;

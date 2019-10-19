@@ -21,11 +21,11 @@ import {
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 
-const PointsSaverScreen: () => React$Node = () => {
+const PurchaseHistoryScreen: () => React$Node = () => {
     return (
       <>
         <View style = {styles.titleBackground}>
-        <Text style={styles.title}>Points Savers</Text>
+        <Text style={styles.title}>Purchase History</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.button}>
@@ -65,6 +65,7 @@ const PointsSaverScreen: () => React$Node = () => {
 const styles = StyleSheet.create({
   title: {
     fontSize: 40,
+    marginTop: 60,
     textAlign: "center",
     color: "cornflowerblue",
   },
@@ -76,10 +77,10 @@ const styles = StyleSheet.create({
     marginRight: 30,
   },
   button: {
-    marginTop: 30,
+    marginTop: 60,
     marginBottom: 30,
 
   },
 });
 
-export default PointsSaverScreen;
+export default PurchaseHistoryScreen;
