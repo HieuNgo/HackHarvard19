@@ -30,6 +30,11 @@ import StartSavingScreen from './StartSaving';
 import SettingsScreen from './Settings';
 import WalletScreen from './Wallet';
 import PointsSaverScreen from './PointsSaver';
+import RankingScreen from './Ranking';
+import CreditCardsScreen from './CreditCards';
+import CCFormScreen from './CCForm';
+
+
 
 const HomeScreen: () => React$Node = () => {
   return (
@@ -80,17 +85,25 @@ const styles = StyleSheet.create({
   },
 });
 const MainNavigator = createBottomTabNavigator({
-  "Credit Card Choosing": {screen: StartSavingScreen},
+  StartSaving: {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
   Points: {screen: PointsSaverScreen},
-  Settings: {screen: SettingsScreen}
+  Settings: {screen: SettingsScreen},
+  Ranking: {screen: RankingScreen},
+  CreditCards: {screen: CreditCardsScreen},
+  CCForm: {screen: CCFormScreen}
+
 });
 
 const StackNavigator = createStackNavigator({
   StartSaving: {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
   Points: {screen: PointsSaverScreen},
-  Settings: {screen: SettingsScreen}
+  Settings: {screen: SettingsScreen},
+  Ranking: {screen: RankingScreen},
+  CreditCards: {screen: CreditCardsScreen},
+  CCForm: {screen: CCFormScreen}
+
   })
 
 const App = createAppContainer(MainNavigator);

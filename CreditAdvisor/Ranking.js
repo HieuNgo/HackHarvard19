@@ -23,36 +23,67 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 
 
-const HomeyScreen: () => React$Node = () => {
+const RankingScreen: () => React$Node = () => {
     return (
       <>
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={styles.scrollView}>
         <View style = {styles.titleBackground}>
         <Text style={styles.title}>Home</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.button}>
             <Button
-              title="Start Saving"
+              title="Gas"
               onPress={() => this.props.navigation.navigate('StartSaving')}
             />
           </View>
           <View style={styles.button}>
             <Button
-              title="My Credit Cards"
+              title="Travel"
               onPress={() => this.props.navigation.navigate('Ranking')}
             />
           </View>
           <View style={styles.button}>
             <Button
-              title="Learn More"
+              title="Student"
+              onPress={() => this.props.navigation.navigate('Ranking')}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="Dining"
+              onPress={() => this.props.navigation.navigate('Ranking')}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="Hotel"
+              onPress={() => this.props.navigation.navigate('Ranking')}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="Faux Miles"
+              onPress={() => this.props.navigation.navigate('Ranking')}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="Miles"
               onPress={() => this.props.navigation.navigate('Ranking')}
             />
           </View>
         </View>
+        </ScrollView>
         </>
     );
 };
 const styles = StyleSheet.create({
+  scrollView: {
+    backgroundColor: Colors.lighter,
+  },
   title: {
     fontSize: 40,
     marginTop: 100,
@@ -73,4 +104,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeyScreen;
+export default RankingScreen;
