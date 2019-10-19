@@ -31,7 +31,6 @@ import HomeyScreen from './Home';
 import SettingsScreen from './Settings';
 import WalletScreen from './Wallet';
 import PurchaseHistoryScreen from './PurchaseHistory';
-import PointsSaverScreen from './PointsSaver';
 import RankingScreen from './Ranking';
 import CreditCardsScreen from './CreditCards';
 import CCFormScreen from './CCForm';
@@ -89,12 +88,10 @@ const styles = StyleSheet.create({
 const MainNavigator = createBottomTabNavigator({
   StartSaving: {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
-  Points: {screen: PointsSaverScreen},
   Settings: {screen: SettingsScreen},
   Ranking: {screen: RankingScreen},
   CreditCards: {screen: CreditCardsScreen},
-  CCForm: {screen: CCFormScreen}
-
+  CCForm: {screen: CCFormScreen},
   Home: {screen: HomeyScreen},
   PurchaseHistory: {screen: PurchaseHistoryScreen},
 });
@@ -102,7 +99,6 @@ const MainNavigator = createBottomTabNavigator({
 const StackNavigator = createStackNavigator({
   StartSaving: {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
-  Points: {screen: PointsSaverScreen},
   Settings: {screen: SettingsScreen},
   Ranking: {screen: RankingScreen},
   CreditCards: {screen: CreditCardsScreen},
