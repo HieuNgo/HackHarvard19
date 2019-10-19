@@ -27,9 +27,10 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import StartSavingScreen from './StartSaving';
+import HomeyScreen from './Home';
 import SettingsScreen from './Settings';
 import WalletScreen from './Wallet';
-import PointsSaverScreen from './PointsSaver';
+import PurchaseHistoryScreen from './PurchaseHistory';
 
 const HomeScreen: () => React$Node = () => {
   return (
@@ -80,20 +81,18 @@ const styles = StyleSheet.create({
   },
 });
 const MainNavigator = createBottomTabNavigator({
-  "Credit Card Choosing": {screen: StartSavingScreen},
-  Wallet: {screen: WalletScreen},
-  Points: {screen: PointsSaverScreen},
+  Home: {screen: HomeyScreen},
+  PurchaseHistory: {screen: PurchaseHistoryScreen},
   Settings: {screen: SettingsScreen}
 });
 
 const StackNavigator = createStackNavigator({
   StartSaving: {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
-  Points: {screen: PointsSaverScreen},
   Settings: {screen: SettingsScreen}
   })
 
-const App = createAppContainer(MainNavigator);
+const App = createAppContainer(MainNavigator, StackNavigator);
 
 
 export default App;

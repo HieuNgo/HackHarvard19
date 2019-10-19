@@ -44,38 +44,38 @@ class StartSavingScreen extends Component{
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>
         <View style = {styles.titleBackground}>
-          <Text style={styles.title}>Credit Advisor</Text>
+          <Text style={styles.title}>Start Saving</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.sectionContainer}>
             <View style={styles.button}>
               <Button
                 title="Gas"
-                onPress={() => this.props.navigation.navigate('Ranking')}
+                onPress={() => this.props.navigation.navigate('Rankings')}
               />
             </View>
             <View style={styles.button}>
               <Button
                 title="Grocery"
-                onPress={() => this.props.navigation.navigate('Ranking')}
+                onPress={() => this.props.navigation.navigate('Rankings')}
               />
             </View>
             <View style={styles.button}>
               <Button
                 title="Travel"
-                onPress={() => this.props.navigation.navigate('Ranking')}
+                onPress={() => this.props.navigation.navigate('Rankings')}
               />
             </View>
             <View style={styles.button}>
               <Button
                 title="Restaurant"
-                onPress={() => this.props.navigation.navigate('Ranking')}
+                onPress={() => this.props.navigation.navigate('Rankings')}
               />
             </View>
             <View style={styles.button}>
               <Button
                 title="Morgage"
-                onPress={() => this.props.navigation.navigate('Ranking')}
+                onPress={() => this.props.navigation.navigate('Rankings')}
               />
             </View>
           </View>
@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
   },
   button: {
     margin: 30,
+    marginTop: 60,
     marginBottom: 10,
   },
   container: {
@@ -138,6 +139,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 40,
+    marginTop: 60,
     textAlign: "center",
     color: "cornflowerblue",
   },

@@ -40,13 +40,13 @@ const HomeyScreen: () => React$Node = () => {
           <View style={styles.button}>
             <Button
               title="My Credit Cards"
-              onPress={() => this.props.navigation.navigate('Ranking')}
+              onPress={() => this.props.navigation.navigate('CreditCards')}
             />
           </View>
           <View style={styles.button}>
             <Button
               title="Learn More"
-              onPress={() => this.props.navigation.navigate('Ranking')}
+              onPress={() => this.props.navigation.navigate('LearnMore')}
             />
           </View>
         </View>
@@ -56,7 +56,7 @@ const HomeyScreen: () => React$Node = () => {
 const styles = StyleSheet.create({
   title: {
     fontSize: 40,
-    marginTop: 100,
+    marginTop: 60,
     textAlign: "center",
     color: "cornflowerblue",
   },
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     marginRight: 30,
   },
   button: {
-    marginTop: 70,
+    marginTop: 60,
     marginBottom: 30,
 
   },
