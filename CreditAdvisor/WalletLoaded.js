@@ -73,7 +73,7 @@ export default class WalletLoaded extends Component {
       require('./CreditCardImages/CapitalOneVentureOne.jpg'),
     ];
     let rewardsRate= [0.05, 10, 0.06, 0.05, 0.05, 2];
-    let rewardsType= ['$','Miles', '$', '$', '$', 'X Points'];
+    let rewardsType= ['$','Miles', '$', '$', '$', 'Points'];
     let RandomNumber = Math.floor(Math.random() * 6) + 1 ;
     let RandomMoney = Math.floor(Math.random() * 100) + Math.floor(Math.random() * 100)/100 ;
     let icon = require('./CreditCardImages/BankOfAmerica.png');

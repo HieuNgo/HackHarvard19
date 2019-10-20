@@ -110,6 +110,7 @@ export default class CreditCardsScreen extends Component{
     );
   };
 };
+
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
