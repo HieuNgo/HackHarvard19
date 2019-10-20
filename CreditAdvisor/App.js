@@ -94,7 +94,7 @@ const stackNavigator = createStackNavigator({
   StartSaving: {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
   CreditCards: {screen: CreditCardsScreen},
-  SvgExample: {screen: SvgExample}
+  SvgExample: {screen: SvgExample},
   CCFormScreen: {screen: CCFormScreen},
   WalletLoaded: {screen: WalletLoaded},
   WalletLoading: {screen: WalletLoading},
