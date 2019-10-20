@@ -9,9 +9,6 @@ import {
 } from "react-native";
 import BouncingPreloader from "react-native-bouncing-preloader";
 
-import WalletLoaded from './WalletLoaded'
-import WalletLoading from './WalletLoading'
-
 const icons = [
   require('./CreditCardImages/Brex.jpg'),
   require('./CreditCardImages/BankOfAmerica.png'),
@@ -21,31 +18,17 @@ const icons = [
   require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
 ];
 
-export default class Wallet extends Component {
-  constructor(props){
-   super(props)
-   this.state = {
-    component : <WalletLoading />
-   }
-  }
-
-
-  componentDidMount(){
-
-       // Start counting when the page is loaded
-       this.timeoutHandle = setTimeout(()=>{
-            // Add your logic for the transition
-            this.setState({ component: <WalletLoaded /> })
-       }, 2000);
-  }
-
-  componentWillUnmount(){
-       clearTimeout(this.timeoutHandle);
-  }
-
+export default class WalletLoading extends Component {
   render() {
     return (
-      this.state.component
+      <View style={styles.container}>
+        <BouncingPreloader
+          icons={icons}
+          leftDistance={-100}
+          rightDistance={-150}
+          speed={1000}
+        />
+      </View>
     );
   }
 }

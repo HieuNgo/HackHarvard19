@@ -34,7 +34,8 @@ import PurchaseHistoryScreen from './PurchaseHistory';
 import RankingsScreen from './Rankings';
 import CreditCardsScreen from './CreditCards';
 import CCFormScreen from './CCForm';
-
+import WalletLoaded from './WalletLoaded';
+import WalletLoading from './WalletLoading';
 
 
 const HomeScreen: () => React$Node = () => {
@@ -105,6 +106,8 @@ const stackNavigator = createStackNavigator({
   Rankings: {screen: RankingsScreen},
   CreditCards: {screen: CreditCardsScreen},
   CCForm: {screen: CCFormScreen},
+  WalletLoaded: {screen: WalletLoaded},
+  WalletLoading: {screen: WalletLoading},
   Settings: {screen: SettingsScreen}
   },
   {
