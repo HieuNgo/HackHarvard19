@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ScrollView,
   View,
+  Image,
   FlatList,
   Button,
   Alert,
@@ -24,6 +25,23 @@ import {
 
 class Rankings4Screen extends Component {
     render() {
+    const images = [
+        require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
+        require('./CreditCardImages/Capital-One®-Venture®-Rewards-Credit-Card.png'),
+        require('./CreditCardImages/ChasefreedomCreditCard.png'),
+        require('./CreditCardImages/BankOfAmerica.png'),
+        require('./CreditCardImages/Capital-One-Savor-One-Cash-Back.png'),
+        require('./CreditCardImages/BlueCashPreferredAmericanExpress.jpg'),
+        require('./CreditCardImages/USBankCashToe.png'),
+        require('./CreditCardImages/Citi-costco-anywhere-visa-credit-card.jpg'),
+        require('./CreditCardImages/Brex.jpg'),
+        require('./CreditCardImages/mastercard-black-card.jpg'),
+        require('./CreditCardImages/NHL_00_Shield_Card.png'),
+        require('./CreditCardImages/mastercard-titanium-card.png'),
+        require('./CreditCardImages/goldcard.png'),
+        require('./CreditCardImages/CapitalOneQSCreditCard.jpg'),
+        require('./CreditCardImages/discover-it-chrome-for-students-credit-card.png')
+      ];
       var creditcard_name = [
         {
           "name": "Discover it Cash Back",
@@ -36,7 +54,7 @@ class Rankings4Screen extends Component {
         },
         {
           "name": "Bank of America® Cash Rewards credit card",
-          "gas": "choose1_3",
+          "gas": "3",
           "travel": "3",
           "grocery": "2",
           "online_shopping": "1",
@@ -137,15 +155,6 @@ class Rankings4Screen extends Component {
         "others": "0"
       },
       {
-        "name": "Discover it Business Card",
-        "gas": "1.50",
-        "travel": "1.50",
-        "grocery": "1.50",
-        "online_shopping": "1.50",
-        "dinning": "1.50",
-        "others": "1.50"
-      },
-      {
         "name": "Mastercard Black Card",
         "gas": "1.50",
         "travel": "2",
@@ -198,33 +207,6 @@ class Rankings4Screen extends Component {
         "online_shopping": "1",
         "dinning": "2",
         "others": "1"
-      },
-      {
-        "name": "Discover it Student Cash Back",
-        "gas": "5",
-        "travel": "1",
-        "grocery": "5",
-        "online_shopping": "amazon_5 other_1",
-        "dinning": "5",
-        "others": "1"
-      },
-      {
-        "name": "Discover it Student chrome",
-        "gas": "2",
-        "travel": "1",
-        "grocery": "1",
-        "online_shopping": "1",
-        "dinning": "2",
-        "others": "1"
-      },
-      {
-        "name": "Discover it Secured",
-        "gas": "2",
-        "travel": "1",
-        "grocery": "1",
-        "online_shopping": "1",
-        "dinning": "2",
-        "others": "1"
       }
     ]
 
@@ -234,11 +216,14 @@ class Rankings4Screen extends Component {
       sorted = true;
       for(var i=0; i < data.length - 1; i++)
       {
-        if(data[i+1].dinning < data[i].dinning)
+        if(data[i+1].gas < data[i].gas)
         {
-            var temp = data[i+1];
-            data[i+1] = data[i];
-            data[i] = temp;
+            var temp1 = data[i+1];
+            data[i+1] = images[i];
+            data[i] = temp1;
+            var temp = images[i+1];
+            images[i+1] = images[i];
+            images[i] = temp;
             sorted = false;
         }
       }
@@ -250,53 +235,122 @@ class Rankings4Screen extends Component {
       newsorted = true;
       for(var i=0; i < creditcard_name.length - 1; i++)
       {
-        if(creditcard_name[i+1].dinning < creditcard_name[i].dinning)
+        if(creditcard_name[i+1].gas < creditcard_name[i].gas)
         {
-            var temp = creditcard_name[i+1];
+            var temp1 = creditcard_name[i+1];
             creditcard_name[i+1] = creditcard_name[i];
-            creditcard_name[i] = temp;
-            newsorted = false;
+            creditcard_name[i] = temp1;
+            var temp = images1[i+1];
+            images1[i+1] = images1[i];
+            images1[i] = temp;
+            sorted = false;
         }
       }
     }
 
+    // var least_index = 666;
+    // var least = 666;
+    // for(i=0; i<19; i++)
+    // {
+    //   //var list_name = data[i].name;
+    //
+    //   var grocery = data[i].travel;
+    //
+    //   for(var j=0; j<19; j++)
+    //   {
+    //     if(grocery < least)
+    //     {
+    //       least = travel;
+    //       least_index = i;
+    //     }
+    //   }
+    // }
 
-      return (
-        <>
-          <Text style={styles.title}>
-            Best Credit Cards For Restaurant
-          </Text>
+  //  best_travel_cc = data[greatest_index].name;
+    // var greatest = '69';
+    // var great_int = Number(greatest)
+    //
+    // if(great_int < 59)
+    // {
+    //   var toPrint = 'works';
+    // }
+    // else {
+    //   var toPrint = 'works like a charm';
+    // }
+    // var yoyo = data[1].name[2];
 
-          <View style={styles.container}>
-            <FlatList
-              data={[
-                {key: data[18].name},
-                {key: data[17].name},
-                {key: data[16].name},
-                {key: data[15].name},
-                {key: data[14].name}
-              ]}
-              renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-            />
-
-          </View>
-
-          <Text style={styles.body}>
-            Your Credit Card
-          </Text>
-          <View style={styles.container}>
-          <FlatList
-            data={[
-              {key: creditcard_name[2].name},
-              {key: creditcard_name[1].name}
-            ]}
-            renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+    return (
+      <>
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={styles.scrollView}>
+        <Text style={styles.title}>
+          Best Credit Cards For Gas
+        </Text>
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[14]}
           />
-          </View>
-        </>
-      );
-    }
+        </View>
+
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[13]}
+          />
+        </View>
+
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[12]}
+          />
+        </View>
+
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[11]}
+          />
+        </View>
+
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[10]}
+          />
+        </View>
+
+        <Text style={styles.body}>
+          Your Credit Card
+        </Text>
+        <View style={styles.container}>
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[2]}
+          />
+        </View>
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[1]}
+          />
+        </View>
+
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[0]}
+          />
+        </View>
+        </View>
+      </ScrollView>
+      </>
+    );
   }
+}
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
@@ -320,13 +374,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     height: 44,
   },
+  Image: {
+    alignItems: 'center',
+    marginTop: 15,
+    marginBottom: 15,
+  },
   body: {
     textAlign: "center",
     color: "cornflowerblue",
     fontSize: 25,
     marginLeft: 30,
     marginRight: 30,
-    marginBottom: 0
+    marginTop: 20
   },
   button: {
     marginTop: 70,
