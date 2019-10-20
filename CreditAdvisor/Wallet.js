@@ -1,12 +1,28 @@
 import React, { Component } from "react";
-import {
+
+import Svg,{
   Text,
   View,
   StyleSheet,
   Animated,
   Easing,
-  TouchableOpacity
+  TouchableOpacity,
+  Circle,
+  Ellipse,
+  G,
+  LinearGradient,
+  RadialGradient,
+  Line,
+  Path,
+  Polygon,
+  Polyline,
+  Rect,
+  Symbol,
+  Use,
+  Defs,
+  Stop
 } from "react-native";
+
 import BouncingPreloader from "react-native-bouncing-preloader";
 
 import WalletLoaded from './WalletLoaded'
@@ -55,6 +71,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#fff"
+    backgroundColor: "yellow"
+
   }
 });

@@ -31,6 +31,7 @@ import HomeyScreen from './Home';
 import WalletScreen from './Wallet';
 import CreditCardsScreen from './CreditCards';
 import CCFormScreen from './CCForm';
+import SvgExample from './SvgExample';
 import WalletLoaded from './WalletLoaded';
 import WalletLoading from './WalletLoading';
 import Rankings1Screen from './Rankings1';
@@ -93,6 +94,7 @@ const stackNavigator = createStackNavigator({
   StartSaving: {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
   CreditCards: {screen: CreditCardsScreen},
+  SvgExample: {screen: SvgExample},
   CCFormScreen: {screen: CCFormScreen},
   WalletLoaded: {screen: WalletLoaded},
   WalletLoading: {screen: WalletLoading},
