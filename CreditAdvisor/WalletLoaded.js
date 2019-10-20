@@ -58,14 +58,75 @@ export default class WalletLoaded extends Component {
   }
 
 
-
   render() {
+    let category = ['Gas', 'Travel', 'Grocery', 'Online Shopping', 'Dining', 'OThers'];
+    const images = [
+      require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
+      require('./CreditCardImages/Capital-One®-Venture®-Rewards-Credit-Card.png'),
+      require('./CreditCardImages/BlueCashPreferredAmericanExpress.jpg'),
+      require('./CreditCardImages/WellsFargoPropelAmericanExpress.jpg'),
+      require('./CreditCardImages/NHL_00_Shield_Card.png'),
+      require('./CreditCardImages/ChaseSapphirePrefferredCreditCard.jpg'),
+      require('./CreditCardImages/BankOfAmerica.png'),
+      require('./CreditCardImages/Capital-One-Savor-One-Cash-Back.png'),
+      require('./CreditCardImages/ChaseSapphirePrefferredCreditCard.jpg'),
+      require('./CreditCardImages/CapitalOneVentureOne.jpg'),
+    ];
+    let rewardsRate= [0.05, 10, 0.06, 0.05, 0.05, 2];
+    let rewardsType= ['$','Miles', '$', '$', '$', 'X Points'];
+    let RandomNumber = Math.floor(Math.random() * 6) + 1 ;
+    let RandomMoney = Math.floor(Math.random() * 100) + Math.floor(Math.random() * 100)/100 ;
+    let icon = require('./CreditCardImages/BankOfAmerica.png');
+    let categ = category[0];
+    let rewardTracker = 0;
+    let type = '$';
+    switch (RandomNumber) {
+      case 1:
+        icon = images[0];
+        categ = category[0];
+        rewardTracker = RandomMoney*rewardsRate[0];
+        type = rewardsType[0];
+        break;
+      case 2:
+        icon = images[1];
+        categ = category[1];
+        rewardTracker = RandomMoney*rewardsRate[1];
+        type = rewardsType[1];
+        break;
+      case 3:
+        icon = images[2];
+        categ = category[2];
+        rewardTracker = RandomMoney*rewardsRate[2];
+        type = rewardsType[2];
+        break;
+      case 4:
+        icon = images[0];
+        categ = category[3];
+        rewardTracker = RandomMoney*rewardsRate[3];
+        type = rewardsType[3];
+        break;
+      case 5:
+        icon = images[4];
+        categ = category[4];
+        rewardTracker = RandomMoney*rewardsRate[4];
+        type = rewardsType[4];
+        break;
+      case 6:
+        icon = images[5];
+        categ = category[5];
+        rewardTracker = RandomMoney*rewardsRate[5];
+        type = rewardsType[5];
+        break;
+    };
+
+
+
     return (
       <>
       <View style={styles.Image}>
         <Image
           style={{width: 380, height: 220, flexWrap: 'wrap',}}
-          source={require('./images/CapitalOne.jpg')}
+          source={icon}
         />
         <Button
           title="Transaction Details"
@@ -73,14 +134,9 @@ export default class WalletLoaded extends Component {
         />
       </View>
       <View>
-        <FlatList
-          data={this.state.arrayHolder}
-          width='100%'
-          extraData={this.state.arrayHolder}
-          keyExtractor={(index) => index.toString()}
-          ItemSeparatorComponent={this.FlatListItemSeparator}
-          renderItem={({ item }) => <Text style={styles.item} onPress={this.GetItem.bind(this, item.title)} > {item.title} </Text>}
-        />
+          <Text style={styles.item}>Category: {categ}</Text>
+          <Text style={styles.item}>Payment: ${RandomMoney}</Text>
+          <Text style={styles.item}>Rewards: {type} {rewardTracker.toFixed(2)}</Text>
       </View>
       </>
     );

@@ -1,30 +1,32 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import {
-  SafeAreaView,
+  Text,
+  View,
   StyleSheet,
+  Animated,
+  Easing,
   ScrollView,
   Image,
-  View,
   Button,
-  Alert,
-  Text,
-  StatusBar,
-} from 'react-native';
-
+  TouchableOpacity
+} from "react-native";
+import BouncingPreloader from "react-native-bouncing-preloader";
 import {
   Header,
-  LearnMoreLinks,
   Colors,
-  DebugInstructions,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import {createStackNavigator} from 'react-navigation-stack';
-import {createAppContainer} from 'react-navigation';
 
+const icons = [
+  require('./CreditCardImages/Brex.jpg'),
+  require('./CreditCardImages/BankOfAmerica.png'),
+  require('./CreditCardImages/Capital-One-Savor-One-Cash-Back.png'),
+  require('./CreditCardImages/Capital-One®-Venture®-Rewards-Credit-Card.png'),
+  require('./CreditCardImages/Citi-costco-anywhere-visa-credit-card.jpg'),
+  require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
+];
 
-export default class CreditCardsScreen extends Component{
+export default class Points extends Component {
   render() {
     return (
       <>
@@ -32,84 +34,85 @@ export default class CreditCardsScreen extends Component{
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>
         <View style = {styles.titleBackground}>
-        <Text style={styles.title}>M   Credit Cards' Points</Text>
+        <Text style={styles.title}>Your Credit Cards' Points</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.Image}>
             <Image
               style={{width: 350, height: 200}}
-              source={require('./CreditCardImages/BankOfAmerica.png')}
+              source={require('./CreditCardImages/ChaseSapphirePrefferredCreditCard.jpg')}
             />
             <Text style={styles.text}>Cash Back: $33.23 </Text>
           </View>
           <View style={styles.Image}>
             <Image
               style={{width: 350, height: 200}}
-              source={require('./CreditCardImages/Capital-One-Savor-One-Cash-Back.png')}
+              source={require('./images/AmericanExpress.jpg')}
             />
             <Text style={styles.text}>Cash Back: $54.12 </Text>
           </View>
           <View style={styles.Image}>
             <Image
               style={{width: 350, height: 200}}
-              source={require('./CreditCardImages/ChaseSapphirePrefferredCreditCard.jpg')}
+              source={require('./images/BankOfAmerica.jpg')}
             />
-            <Text style={styles.text}>Points: 2200 (1X Points)</Text>
+            <Text style={styles.text}>Points: 2200 </Text>
           </View>
           <View style={styles.Image}>
             <Image
               style={{width: 350, height: 200}}
-              source={require('./CreditCardImages/CapitalOneVentureOne.jpg')}
+              source={require('./images/citiBank.jpg')}
             />
-            <Text style={styles.text}>Miles: 120 (1.25x Miles)</Text>
+            <Text style={styles.text}>Miles: 120 </Text>
           </View>
           <View style={styles.Image}>
             <Image
               style={{width: 350, height: 200}}
-              source={require('./CreditCardImages/DiscoverItMiles.jpg')}
+              source={require('./images/DeltaSkyMiles.jpg')}
             />
-            <Text style={styles.text}>Miles: 2200 (1.5x Miles)</Text>
+            <Text style={styles.text}>Miles: 2200 </Text>
           </View>
           <View style={styles.Image}>
             <Image
               style={{width: 350, height: 200}}
-              source={require('./CreditCardImages/Capital-One®-Venture®-Rewards-Credit-Card.png')}
+              source={require('./images/Paypal.jpg')}
             />
             <Text style={styles.text}>Cashback: $22.40 </Text>
           </View>
           <View style={styles.Image}>
             <Image
               style={{width: 350, height: 200}}
-              source={require('./CreditCardImages/WellsFargoPropelAmericanExpress.jpg')}
+              source={require('./images/USAAVIsa.jpg')}
             />
-            <Text style={styles.text}>Points: 2200 (3X points)</Text>
+            <Text style={styles.text}>Points: 2200 </Text>
           </View>
           <View style={styles.Image}>
             <Image
               style={{width: 350, height: 200}}
-              source={require('./CreditCardImages/CitiRewardsCard.jpg')}
+              source={require('./images/USBank.jpg')}
             />
-            <Text style={styles.text}>Points: 100 (2X points)</Text>
+            <Text style={styles.text}>Points: 100 </Text>
           </View>
           <View style={styles.Image}>
             <Image
               style={{width: 350, height: 200}}
-              source={require('./CreditCardImages/VirginAtlanticWorldEliteMasterCard.jpg')}
+              source={require('./images/VIbeCreditUnion.jpg')}
             />
-            <Text style={styles.text}>Miles: 200 (1.5x points)</Text>
+            <Text style={styles.text}>Miles: 200 </Text>
           </View>
         </View>
         <View style={styles.button}>
           <Button
             title="Add Cards"
-            onPress={() => this.props.navigation.navigate('CCFormScreen')}
+            onPress={() => Alert.alert('Simple Button pressed')}
           />
         </View>
         </ScrollView>
         </>
     );
-  };
-};
+  }
+}
+
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
@@ -138,8 +141,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'right',
-    marginRight: 30
+    textAlign: 'right'
   }
 });

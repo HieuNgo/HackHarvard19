@@ -57,12 +57,6 @@ class HomeyScreen extends Component{
                 onPress={() => this.props.navigation.navigate('Wallet')}
               />
             </View>
-            <View style={styles.button}>
-              <Button
-                title="Learn More"
-                onPress={() => this.props.navigation.navigate('LearnMore')}
-              />
-            </View>
           </View>
         </View>
       </ScrollView>
