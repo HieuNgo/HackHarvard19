@@ -23,7 +23,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 
 
-const RankingScreen: () => React$Node = () => {
+const RankingsScreen: () => React$Node = () => {
     return (
       <>
       <ScrollView
@@ -104,4 +104,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RankingScreen;
+export default RankingsScreen;

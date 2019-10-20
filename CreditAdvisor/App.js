@@ -31,9 +31,9 @@ import HomeyScreen from './Home';
 import SettingsScreen from './Settings';
 import WalletScreen from './Wallet';
 import PurchaseHistoryScreen from './PurchaseHistory';
-import RankingScreen from './Ranking';
+import RankingsScreen from './Rankings';
 import CreditCardsScreen from './CreditCards';
-import CCFormScreen from './CCForm';
+//import CCFormScreen from './CCForm';
 
 
 
@@ -89,9 +89,9 @@ const MainNavigator = createBottomTabNavigator({
   StartSaving: {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
   Settings: {screen: SettingsScreen},
-  Ranking: {screen: RankingScreen},
+  Rankings: {screen: RankingsScreen},
   CreditCards: {screen: CreditCardsScreen},
-  CCForm: {screen: CCFormScreen},
+  //CCForm: {screen: CCFormScreen},
   Home: {screen: HomeyScreen},
   PurchaseHistory: {screen: PurchaseHistoryScreen},
 });
@@ -100,9 +100,9 @@ const StackNavigator = createStackNavigator({
   StartSaving: {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
   Settings: {screen: SettingsScreen},
-  Ranking: {screen: RankingScreen},
+  Rankings: {screen: RankingsScreen},
   CreditCards: {screen: CreditCardsScreen},
-  CCForm: {screen: CCFormScreen}
+  //CCForm: {screen: CCFormScreen}
 
   })
 

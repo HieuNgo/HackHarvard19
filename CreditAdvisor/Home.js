@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {createStackNavigator} from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import {createAppContainer} from 'react-navigation';
 import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
   View,
-  Button,
   Alert,
   Text,
   StatusBar,
+  Button,
 } from 'react-native';
 
 import {
@@ -18,40 +21,60 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import {createStackNavigator} from 'react-navigation-stack';
-import {createAppContainer} from 'react-navigation';
 
+class HomeyScreen extends Component{
+  //state object
+  state = { toggle: false };
+  selectedDate = new Date();
 
-const HomeyScreen: () => React$Node = () => {
+  generateDates = (hours, minutes) => {
+    const date = new Date();
+    date.setHours(date.getHours() + hours);
+    if (minutes != null) {
+      date.setMinutes(minutes);
+    }
+    return date;
+  };
+
+  render() {
     return (
       <>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={styles.scrollView}>
         <View style = {styles.titleBackground}>
-        <Text style={styles.title}>Home</Text>
+          <Text style={styles.title}>Start Saving</Text>
         </View>
         <View style={styles.body}>
-          <View style={styles.button}>
-            <Button
-              title="Start Saving"
-              onPress={() => this.props.navigation.navigate('StartSaving')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="My Credit Cards"
-              onPress={() => this.props.navigation.navigate('CreditCards')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="Learn More"
-              onPress={() => this.props.navigation.navigate('LearnMore')}
-            />
+          <View style={styles.sectionContainer}>
+            <View style={styles.button}>
+              <Button
+                title="Start Saving"
+                onPress={() => this.props.navigation.navigate('StartSaving')}
+              />
+            </View>
+            <View style={styles.button}>
+              <Button
+                title="My Credit Card"
+                onPress={() => this.props.navigation.navigate('CreditCards')}
+              />
+            </View>
+            <View style={styles.button}>
+              <Button
+                title="Learn More"
+                onPress={() => this.props.navigation.navigate('LearnMore')}
+              />
+            </View>
           </View>
         </View>
-        </>
+      </ScrollView>
+      </SafeAreaView>
+      </>
     );
-};
+  };
+}
 const styles = StyleSheet.create({
   title: {
     fontSize: 40,
