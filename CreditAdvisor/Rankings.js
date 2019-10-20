@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {cardName} from './CreditCards.js';
 import {
   SafeAreaView,
   StyleSheet,
@@ -21,27 +20,13 @@ import {
 
 class RankingsScreen extends Component {
   render() {
-   // readFile = (function() {
-   //   async (MyPath) => {
-   //        try {
-   //          const path =MyPath+ "/data.txt";
-   //          const contents = await RNFS.readFile(path, "utf8");
-   //          return("" + contents);
-   //        } catch (e) {
-   //          alert("" + e);
-   //        }
-   //      };
-   // });
-     // <Button title="AppFilesDir" onPress={() => this.readFile(RNFS.ExternalDirectoryPath)} />
-     // <Button title="InternalStorageDir" onPress={() => this.readFile(RNFS.ExternalStorageDirectoryPath)} />
 
     return (
       <>
       <Text style={styles.body}>
-        //{readFile}
-        {cardName}
+       Hello
       </Text>
-        </>
+      </>
     );
   }
 };

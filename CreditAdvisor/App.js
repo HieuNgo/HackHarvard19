@@ -5,10 +5,10 @@
  * @format
  * @flow
  */
-import {createAppContainer} from 'react-navigation';
+import {createAppContainer, StackNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import React from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -29,11 +29,11 @@ import {
 import StartSavingScreen from './StartSaving';
 import HomeyScreen from './Home';
 import SettingsScreen from './Settings';
-//import WalletScreen from './Wallet';
+import WalletScreen from './Wallet';
 import PurchaseHistoryScreen from './PurchaseHistory';
 import RankingsScreen from './Rankings';
 import CreditCardsScreen from './CreditCards';
-//import CCFormScreen from './CCForm';
+import CCFormScreen from './CCForm';
 
 
 
@@ -85,28 +85,37 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
-const MainNavigator = createBottomTabNavigator({
-  StartSaving: {screen: StartSavingScreen},
-  //Wallet: {screen: WalletScreen},
-  Settings: {screen: SettingsScreen},
-  Rankings: {screen: RankingsScreen},
-  CreditCards: {screen: CreditCardsScreen},
-  //CCForm: {screen: CCFormScreen},
+// const mainNavigator = createBottomTabNavigator({
+//   Home: {screen: HomeyScreen},
+//   PurchaseHistory: {screen: PurchaseHistoryScreen},
+//   StartSaving: {screen: StartSavingScreen},
+//   //Wallet: {screen: WalletScreen},
+//   Rankings: {screen: RankingsScreen},
+//   CreditCards: {screen: CreditCardsScreen},
+//   CCForm: {screen: CCFormScreen},
+//   Settings: {screen: SettingsScreen},
+//
+// });
+
+const stackNavigator = createStackNavigator({
   Home: {screen: HomeyScreen},
   PurchaseHistory: {screen: PurchaseHistoryScreen},
-});
-
-const StackNavigator = createStackNavigator({
   StartSaving: {screen: StartSavingScreen},
-  //Wallet: {screen: WalletScreen},
-  Settings: {screen: SettingsScreen},
+  Wallet: {screen: WalletScreen},
   Rankings: {screen: RankingsScreen},
   CreditCards: {screen: CreditCardsScreen},
-  //CCForm: {screen: CCFormScreen}
-
+  CCForm: {screen: CCFormScreen},
+  Settings: {screen: SettingsScreen}
+  },
+  {
+    initialRouteName: 'Home',
   })
 
-const App = createAppContainer(MainNavigator, StackNavigator);
+const AppContainer = createAppContainer(stackNavigator);
 
 
-export default App;
+export default class App extends Component {
+  render() {
+    return <AppContainer />;
+  }
+}

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {createStackNavigator} from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import {createAppContainer} from 'react-navigation';
+import {withNavigation, createAppContainer} from 'react-navigation';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,7 +10,7 @@ import {
   Alert,
   Text,
   StatusBar,
-  Button,
+  Button
 } from 'react-native';
 
 import {
@@ -22,18 +22,6 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 class StartSavingScreen extends Component{
-  //state object
-  state = { toggle: false };
-  selectedDate = new Date();
-
-  generateDates = (hours, minutes) => {
-    const date = new Date();
-    date.setHours(date.getHours() + hours);
-    if (minutes != null) {
-      date.setMinutes(minutes);
-    }
-    return date;
-  };
 
   render() {
     return (
@@ -51,7 +39,9 @@ class StartSavingScreen extends Component{
             <View style={styles.button}>
               <Button
                 title="Gas"
-                onPress={() => this.props.navigation.navigate('Rankings')}
+                onPress= { () => {
+                  this.props.navigation.navigate('Rankings');
+                }}
               />
             </View>
             <View style={styles.button}>

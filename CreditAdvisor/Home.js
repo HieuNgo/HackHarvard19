@@ -25,16 +25,6 @@ import {
 class HomeyScreen extends Component{
   //state object
   state = { toggle: false };
-  selectedDate = new Date();
-
-  generateDates = (hours, minutes) => {
-    const date = new Date();
-    date.setHours(date.getHours() + hours);
-    if (minutes != null) {
-      date.setMinutes(minutes);
-    }
-    return date;
-  };
 
   render() {
     return (
@@ -45,7 +35,7 @@ class HomeyScreen extends Component{
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>
         <View style = {styles.titleBackground}>
-          <Text style={styles.title}>Start Saving</Text>
+          <Text style={styles.title}>Credit Advisor</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.sectionContainer}>
@@ -59,6 +49,12 @@ class HomeyScreen extends Component{
               <Button
                 title="My Credit Card"
                 onPress={() => this.props.navigation.navigate('CreditCards')}
+              />
+            </View>
+            <View style={styles.button}>
+              <Button
+                title="Pay"
+                onPress={() => this.props.navigation.navigate('Wallet')}
               />
             </View>
             <View style={styles.button}>
