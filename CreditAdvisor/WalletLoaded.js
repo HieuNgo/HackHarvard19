@@ -6,6 +6,7 @@ import {
   Animated,
   Easing,
   Image,
+  ImageBackground,
   Button,
   Alert,
   FlatList,
@@ -123,6 +124,8 @@ export default class WalletLoaded extends Component {
 
     return (
       <>
+      <ImageBackground source={require('./images/SlightOceanView.jpg')} style={{width: '100%', height: '100%'}}>
+
       <View style={styles.Image}>
         <Image
           style={{width: 380, height: 220, flexWrap: 'wrap',}}
@@ -133,11 +136,20 @@ export default class WalletLoaded extends Component {
           onPress={() =>{}}
         />
       </View>
-      <View>
-          <Text style={styles.item}>Category: {categ}</Text>
-          <Text style={styles.item}>Payment: ${RandomMoney}</Text>
-          <Text style={styles.item}>Rewards: {type} {rewardTracker.toFixed(2)}</Text>
+
+
+      <View style={styles.container}>
+          <Text style={styles.item}>Category:</Text>
+          <Text style={styles.item2}>{categ}</Text>
+
+          <Text style={styles.item}>Payment:</Text>
+          <Text style={styles.item3}>${RandomMoney}</Text>
+
+          <Text style={styles.item}>Rewards:</Text>
+          <Text style={styles.item4}>{type} {rewardTracker.toFixed(2)}</Text>
       </View>
+
+      </ImageBackground>
       </>
     );
   }
@@ -145,19 +157,49 @@ export default class WalletLoaded extends Component {
 
 const styles = StyleSheet.create({
 
-  // MainContainer: {
-  //
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   flex: 1,
-  //   margin: 2
-  //
-  // },
+  container: {
+
+  },
 
   item: {
+    fontWeight: 'bold',
+    color: "white",
     padding: 10,
     fontSize: 18,
     height: 44,
+  },
+
+  item2: {
+    position: 'absolute',
+    fontWeight: 'bold',
+    color: "white",
+    marginTop: 14,
+    right: 10,
+    fontSize: 18,
+    height: 44,
+    textAlign: 'right',
+  },
+
+  item3: {
+    position: 'absolute',
+    fontWeight: 'bold',
+    color: "white",
+    marginTop: 55,
+    right: 10,
+    fontSize: 18,
+    height: 44,
+    textAlign: 'right',
+  },
+
+  item4: {
+    position: 'absolute',
+    fontWeight: 'bold',
+    color: "white",
+    marginTop: 100,
+    right: 10,
+    fontSize: 18,
+    height: 44,
+    textAlign: 'right',
   },
 
   // button: {
