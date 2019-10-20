@@ -226,7 +226,7 @@ class Rankings1Screen extends Component {
         if(data[i+1].gas < data[i].gas)
         {
             var temp1 = data[i+1];
-            data[i+1] = images[i];
+            data[i+1] = data[i];
             data[i] = temp1;
             var temp = images[i+1];
             images[i+1] = images[i];

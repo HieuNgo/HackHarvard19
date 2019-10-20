@@ -42,6 +42,11 @@ class Rankings4Screen extends Component {
         require('./CreditCardImages/CapitalOneQSCreditCard.jpg'),
         require('./CreditCardImages/discover-it-chrome-for-students-credit-card.png')
       ];
+      const images1 = [
+        require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
+        require('./CreditCardImages/BankOfAmerica.png'),
+        require('./CreditCardImages/CapitalOneQSCreditCard.jpg'),
+      ];
       var creditcard_name = [
         {
           "name": "Discover it Cash Back",
@@ -216,10 +221,10 @@ class Rankings4Screen extends Component {
       sorted = true;
       for(var i=0; i < data.length - 1; i++)
       {
-        if(data[i+1].gas < data[i].gas)
+        if(data[i+1].dinning < data[i].dinning)
         {
             var temp1 = data[i+1];
-            data[i+1] = images[i];
+            data[i+1] = data[i];
             data[i] = temp1;
             var temp = images[i+1];
             images[i+1] = images[i];
@@ -235,7 +240,7 @@ class Rankings4Screen extends Component {
       newsorted = true;
       for(var i=0; i < creditcard_name.length - 1; i++)
       {
-        if(creditcard_name[i+1].gas < creditcard_name[i].gas)
+        if(creditcard_name[i+1].dinning < creditcard_name[i].dinning)
         {
             var temp1 = creditcard_name[i+1];
             creditcard_name[i+1] = creditcard_name[i];
@@ -248,44 +253,13 @@ class Rankings4Screen extends Component {
       }
     }
 
-    // var least_index = 666;
-    // var least = 666;
-    // for(i=0; i<19; i++)
-    // {
-    //   //var list_name = data[i].name;
-    //
-    //   var grocery = data[i].travel;
-    //
-    //   for(var j=0; j<19; j++)
-    //   {
-    //     if(grocery < least)
-    //     {
-    //       least = travel;
-    //       least_index = i;
-    //     }
-    //   }
-    // }
-
-  //  best_travel_cc = data[greatest_index].name;
-    // var greatest = '69';
-    // var great_int = Number(greatest)
-    //
-    // if(great_int < 59)
-    // {
-    //   var toPrint = 'works';
-    // }
-    // else {
-    //   var toPrint = 'works like a charm';
-    // }
-    // var yoyo = data[1].name[2];
-
     return (
       <>
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>
         <Text style={styles.title}>
-          Best Credit Cards For Gas
+          Best Credit Cards For Dining
         </Text>
         <View style={styles.Image}>
           <Image
