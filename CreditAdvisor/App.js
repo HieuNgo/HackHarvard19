@@ -29,7 +29,7 @@ import {
 import StartSavingScreen from './StartSaving';
 import HomeyScreen from './Home';
 import SettingsScreen from './Settings';
-import WalletScreen from './Wallet';
+//import WalletScreen from './Wallet';
 import PurchaseHistoryScreen from './PurchaseHistory';
 import RankingsScreen from './Rankings';
 import CreditCardsScreen from './CreditCards';
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
 });
 const MainNavigator = createBottomTabNavigator({
   StartSaving: {screen: StartSavingScreen},
-  Wallet: {screen: WalletScreen},
+  //Wallet: {screen: WalletScreen},
   Settings: {screen: SettingsScreen},
   Rankings: {screen: RankingsScreen},
   CreditCards: {screen: CreditCardsScreen},
@@ -98,7 +98,7 @@ const MainNavigator = createBottomTabNavigator({
 
 const StackNavigator = createStackNavigator({
   StartSaving: {screen: StartSavingScreen},
-  Wallet: {screen: WalletScreen},
+  //Wallet: {screen: WalletScreen},
   Settings: {screen: SettingsScreen},
   Rankings: {screen: RankingsScreen},
   CreditCards: {screen: CreditCardsScreen},
