@@ -25,6 +25,9 @@ import {createAppContainer} from 'react-navigation';
 
 
 const CreditCardsScreen: () => React$Node = () => {
+
+  var cardName = ['Chase Freedom Unlimited', 'Bank of America Cash Rewards credit card', 'Capital One Quicksilver Cash Rewards Credit Card'];
+
     return (
       <>
       <ScrollView
@@ -128,3 +131,4 @@ const styles = StyleSheet.create({
 });
 
 export default CreditCardsScreen;
+export {cardName};

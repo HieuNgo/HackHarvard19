@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {cardName} from './CreditCards.js';
 import {
   SafeAreaView,
   StyleSheet,
@@ -18,67 +19,31 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import {createStackNavigator} from 'react-navigation-stack';
-import {createAppContainer} from 'react-navigation';
+class RankingsScreen extends Component {
+  render() {
+   // readFile = (function() {
+   //   async (MyPath) => {
+   //        try {
+   //          const path =MyPath+ "/data.txt";
+   //          const contents = await RNFS.readFile(path, "utf8");
+   //          return("" + contents);
+   //        } catch (e) {
+   //          alert("" + e);
+   //        }
+   //      };
+   // });
+     // <Button title="AppFilesDir" onPress={() => this.readFile(RNFS.ExternalDirectoryPath)} />
+     // <Button title="InternalStorageDir" onPress={() => this.readFile(RNFS.ExternalStorageDirectoryPath)} />
 
-
-const RankingsScreen: () => React$Node = () => {
     return (
       <>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={styles.scrollView}>
-        <View style = {styles.titleBackground}>
-        <Text style={styles.title}>Home</Text>
-        </View>
-        <View style={styles.body}>
-          <View style={styles.button}>
-            <Button
-              title="Gas"
-              onPress={() => this.props.navigation.navigate('StartSaving')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="Travel"
-              onPress={() => this.props.navigation.navigate('Ranking')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="Student"
-              onPress={() => this.props.navigation.navigate('Ranking')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="Dining"
-              onPress={() => this.props.navigation.navigate('Ranking')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="Hotel"
-              onPress={() => this.props.navigation.navigate('Ranking')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="Faux Miles"
-              onPress={() => this.props.navigation.navigate('Ranking')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="Miles"
-              onPress={() => this.props.navigation.navigate('Ranking')}
-            />
-          </View>
-        </View>
-        </ScrollView>
+      <Text style={styles.body}>
+        //{readFile}
+        {cardName}
+      </Text>
         </>
     );
+  }
 };
 const styles = StyleSheet.create({
   scrollView: {
@@ -96,6 +61,7 @@ const styles = StyleSheet.create({
   body: {
     marginLeft: 30,
     marginRight: 30,
+    marginTop: 120
   },
   button: {
     marginTop: 70,
