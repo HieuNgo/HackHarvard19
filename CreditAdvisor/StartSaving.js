@@ -38,7 +38,9 @@ class StartSavingScreen extends Component{
             <View style={styles.button}>
               <Button
                 title="Gas"
-                onPress={() => this.props.navigation.navigate('Rankings1')}
+                onPress={() => {
+                  this.props.navigation.navigate('Rankings1')
+                }}
               />
             </View>
             <View style={styles.button}>
