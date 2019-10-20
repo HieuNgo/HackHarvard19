@@ -45,7 +45,7 @@ class HomeyScreen extends Component{
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>
         <View style = {styles.titleBackground}>
-          <Text style={styles.title}>Start Saving</Text>
+          <Text style={styles.title}>Home</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.sectionContainer}>
@@ -59,6 +59,12 @@ class HomeyScreen extends Component{
               <Button
                 title="My Credit Card"
                 onPress={() => this.props.navigation.navigate('CreditCards')}
+              />
+            </View>
+            <View style={styles.button}>
+              <Button
+                title="Purchase History"
+                onPress={() => this.props.navigation.navigate('PurchaseHistory')}
               />
             </View>
             <View style={styles.button}>

@@ -22,19 +22,6 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 class StartSavingScreen extends Component{
-  //state object
-  state = { toggle: false };
-  selectedDate = new Date();
-
-  generateDates = (hours, minutes) => {
-    const date = new Date();
-    date.setHours(date.getHours() + hours);
-    if (minutes != null) {
-      date.setMinutes(minutes);
-    }
-    return date;
-  };
-
   render() {
     return (
       <>
@@ -51,31 +38,25 @@ class StartSavingScreen extends Component{
             <View style={styles.button}>
               <Button
                 title="Gas"
-                onPress={() => this.props.navigation.navigate('Rankings')}
+                onPress={() => this.props.navigation.navigate('Rankings1')}
               />
             </View>
             <View style={styles.button}>
               <Button
                 title="Grocery"
-                onPress={() => this.props.navigation.navigate('Rankings')}
+                onPress={() => this.props.navigation.navigate('Rankings2')}
               />
             </View>
             <View style={styles.button}>
               <Button
                 title="Travel"
-                onPress={() => this.props.navigation.navigate('Rankings')}
+                onPress={() => this.props.navigation.navigate('Rankings3')}
               />
             </View>
             <View style={styles.button}>
               <Button
                 title="Restaurant"
-                onPress={() => this.props.navigation.navigate('Rankings')}
-              />
-            </View>
-            <View style={styles.button}>
-              <Button
-                title="Morgage"
-                onPress={() => this.props.navigation.navigate('Rankings')}
+                onPress={() => this.props.navigation.navigate('Rankings4')}
               />
             </View>
           </View>

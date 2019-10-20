@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
-  Image,
   View,
+  Image,
   Button,
   Alert,
   Text,
@@ -19,15 +19,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import {createStackNavigator} from 'react-navigation-stack';
-import {createAppContainer} from 'react-navigation';
-
-
-const CreditCardsScreen: () => React$Node = () => {
-
-  var cardName = ['Chase Freedom Unlimited', 'Bank of America Cash Rewards credit card', 'Capital One Quicksilver Cash Rewards Credit Card'];
-
+class CreditCardScreen extends Component {
+  render() {
     return (
       <>
       <ScrollView
@@ -95,12 +88,13 @@ const CreditCardsScreen: () => React$Node = () => {
         <View style={styles.button}>
           <Button
             title="Add Cards"
-            onPress={() => Alert.alert('Simple Button pressed')}
+            onPress={() => this.props.navigation.navigate('CCForm')}
           />
         </View>
         </ScrollView>
         </>
     );
+  }
 };
 const styles = StyleSheet.create({
   scrollView: {
@@ -130,5 +124,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CreditCardsScreen;
-export {cardName};
+export default CreditCardScreen;
