@@ -55,8 +55,6 @@ class HomeyScreen extends Component{
               <Button
                 title="Pay"
                 onPress={() => this.props.navigation.navigate('Wallet')}
-                title="Purchase History"
-                onPress={() => this.props.navigation.navigate('PurchaseHistory')}
               />
             </View>
           </View>

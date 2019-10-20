@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ScrollView,
   View,
+  Image,
   FlatList,
   Button,
   Alert,
@@ -24,6 +25,23 @@ import {
 
 class Rankings1Screen extends Component {
     render() {
+    /*  const images = [
+        require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
+        require('./CreditCardImages/Capital-One®-Venture®-Rewards-Credit-Card.png'),
+        require('./CreditCardImages/ChasefreedomCreditCard.png'),
+        require('./CreditCardImages/BankOfAmerica.png'),
+        require('./CreditCardImages/Capital-One-Savor-One-Cash-Back.png'),
+        require('./CreditCardImages/BlueCashPreferredAmericanExpress.jpg'),
+        require('./CreditCardImages/us-ban-cash_toe.png'),
+        require('./CreditCardImages/Citi-costco-anywhere-visa-credit-card.jpg'),
+        require('./CreditCardImages/Brex.jpg'),
+        require('./CreditCardImages/mastercard-black-card.jpg'),
+        require('./CreditCardImages/NHL_00_Shield_Card.png'),
+        require('./CreditCardImages/mastercard-titanium-card.png'),
+        require('./CreditCardImages/goldcard.png'),
+        require('./CreditCardImages/ChaseSapphirePrefferredCreditCard.jpg'),
+        require('./CreditCardImages/CapitalOneVentureOne.jpg'),
+      ]; */
       var creditcard_name = [
         {
           "name": "Discover it Cash Back",
@@ -137,15 +155,6 @@ class Rankings1Screen extends Component {
         "others": "0"
       },
       {
-        "name": "Discover it Business Card",
-        "gas": "1.50",
-        "travel": "1.50",
-        "grocery": "1.50",
-        "online_shopping": "1.50",
-        "dinning": "1.50",
-        "others": "1.50"
-      },
-      {
         "name": "Mastercard Black Card",
         "gas": "1.50",
         "travel": "2",
@@ -195,33 +204,6 @@ class Rankings1Screen extends Component {
         "gas": "2",
         "travel": "2",
         "grocery": "2",
-        "online_shopping": "1",
-        "dinning": "2",
-        "others": "1"
-      },
-      {
-        "name": "Discover it Student Cash Back",
-        "gas": "5",
-        "travel": "1",
-        "grocery": "5",
-        "online_shopping": "amazon_5 other_1",
-        "dinning": "5",
-        "others": "1"
-      },
-      {
-        "name": "Discover it Student chrome",
-        "gas": "2",
-        "travel": "1",
-        "grocery": "1",
-        "online_shopping": "1",
-        "dinning": "2",
-        "others": "1"
-      },
-      {
-        "name": "Discover it Secured",
-        "gas": "2",
-        "travel": "1",
-        "grocery": "1",
         "online_shopping": "1",
         "dinning": "2",
         "others": "1"

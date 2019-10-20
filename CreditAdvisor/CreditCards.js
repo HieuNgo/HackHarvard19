@@ -32,7 +32,7 @@ export default class CreditCardsScreen extends Component{
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>
         <View style = {styles.titleBackground}>
-        <Text style={styles.title}>M   Credit Cards' Points</Text>
+        <Text style={styles.title}>My Credit Cards' Points</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.Image}>
