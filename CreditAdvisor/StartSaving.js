@@ -10,7 +10,8 @@ import {
   Alert,
   Text,
   StatusBar,
-  Button
+  Button,
+  ImageBackground
 } from 'react-native';
 
 import {
@@ -26,6 +27,8 @@ class StartSavingScreen extends Component{
   render() {
     return (
       <>
+      <ImageBackground source={require('./images/SlightOceanView.jpg')} style={{width: '100%', height: '100%'}}>
+
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
       <ScrollView
@@ -72,6 +75,7 @@ class StartSavingScreen extends Component{
         </View>
       </ScrollView>
       </SafeAreaView>
+      </ImageBackground>
       </>
     );
   };

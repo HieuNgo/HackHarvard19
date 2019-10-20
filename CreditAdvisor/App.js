@@ -34,7 +34,7 @@ import PurchaseHistoryScreen from './PurchaseHistory';
 import RankingsScreen from './Rankings';
 import CreditCardsScreen from './CreditCards';
 import CCFormScreen from './CCForm';
-
+import SvgExample from './SvgExample';
 
 
 const HomeScreen: () => React$Node = () => {
@@ -105,7 +105,8 @@ const stackNavigator = createStackNavigator({
   Rankings: {screen: RankingsScreen},
   CreditCards: {screen: CreditCardsScreen},
   CCForm: {screen: CCFormScreen},
-  Settings: {screen: SettingsScreen}
+  Settings: {screen: SettingsScreen},
+  SvgExample: {screen: SvgExample}
   },
   {
     initialRouteName: 'Home',

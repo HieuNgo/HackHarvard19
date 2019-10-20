@@ -20,7 +20,9 @@ import Svg,{
   Symbol,
   Use,
   Defs,
-  Stop
+  Stop,
+  AppRegistry,
+  Image,
 } from "react-native";
 
 import BouncingPreloader from "react-native-bouncing-preloader";
@@ -32,35 +34,39 @@ const icons = [
   require('./images/Paypal.jpg'),
   require('./images/USBank.jpg'),
   require('./images/VIbeCreditUnion.jpg'),
+
 ];
 
-export default class Wallet extends Component {
+export default class SvgExample extends Component {
+  // export default class BackgroundImage extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <BouncingPreloader
-          icons={icons}
-          leftDistance={-100}
-          rightDistance={-150}
-          speed={1000}
-          onLoad={ () =>    {
-            setTimeout(function(){
-            //Put All Your Code Here, Which You Want To Execute After Some Delay Time.
-            Alert.alert("Alert Shows After 5 Seconds of Delay.")
-          }, 2000);}
-          }
+  const resizeMode = 'center';
+      return (
+        <Image
+          style={{
+
+            flex: 1,
+
+            // backgroundImage:"transparent"
+            width: undefined,
+            height: undefined
+
+
+          }}
+          source={require('./images/SlightOceanView.jpg')}
         />
-      </View>
-    );
+      );
+    }
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "yellow"
-
-  }
+    backgroundColor: "#ffddcc"
+  },
 });
+
+AppRegistry.registerComponent('BackgroundImage', () => BackgroundImage);
