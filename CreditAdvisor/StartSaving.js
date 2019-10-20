@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {createStackNavigator} from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import {withNavigation, createAppContainer} from 'react-navigation';
+
+import AwesomeButton from "react-native-really-awesome-button";
+import AwesomeButtonRick from 'react-native-really-awesome-button/src/themes/rick';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -36,34 +40,35 @@ class StartSavingScreen extends Component{
         <View style = {styles.titleBackground}>
           <Text style={styles.title}>Start Saving</Text>
         </View>
+
         <View style={styles.body}>
-          <View style={styles.sectionContainer}>
-            <View style={styles.button}>
-              <Button
-                title="Gas"
-                onPress={() => this.props.navigation.navigate('Rankings1')}
-              />
-            </View>
-            <View style={styles.button}>
-              <Button
-                title="Grocery"
-                onPress={() => this.props.navigation.navigate('Rankings2')}
-              />
-            </View>
-            <View style={styles.button}>
-              <Button
-                title="Travel"
-                onPress={() => this.props.navigation.navigate('Rankings3')}
-              />
-            </View>
-            <View style={styles.button}>
-              <Button
-                title="Restaurant"
-                onPress={() => this.props.navigation.navigate('Rankings4')}
-              />
-            </View>
+
+            <AwesomeButtonRick
+            style={styles.button}
+            type="secondary"
+            onPress={() => this.props.navigation.navigate('Rankings1')}>
+            Gas                         </AwesomeButtonRick>
+
+            <AwesomeButtonRick
+            style={styles.button}
+            type="secondary"
+            onPress={() => this.props.navigation.navigate('Rankings2')}>
+            Grocery                   </AwesomeButtonRick>
+
+            <AwesomeButtonRick
+            style={styles.button}
+            type="secondary"
+            onPress={() => this.props.navigation.navigate('Rankings3')}>
+            Travel                        </AwesomeButtonRick>
+
+            <AwesomeButtonRick
+            style={styles.button}
+            type="secondary"
+            onPress={() => this.props.navigation.navigate('Rankings4')}>
+            Restaurant                  </AwesomeButtonRick>
+
           </View>
-        </View>
+
       </ScrollView>
       </SafeAreaView>
       </ImageBackground>
@@ -74,14 +79,18 @@ class StartSavingScreen extends Component{
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
+    // backgroundColor: Colors.lighter,
   },
   engine: {
     position: 'absolute',
     right: 0,
   },
   body: {
-    backgroundColor: Colors.white,
+    // backgroundColor: Colors.white,
+    marginTop: 5,
+    marginLeft: 30,
+    marginRight: 30,
+    alignItems: 'center'
   },
   sectionContainer: {
     marginTop: 32,
@@ -116,20 +125,21 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
+    // backgroundColor: '#FFF',
     paddingTop: 22,
   },
   headerStyle: {
-    backgroundColor: '#4286f4',
+    // backgroundColor: '#4286f4',
   },
   title: {
     fontSize: 40,
     marginTop: 60,
     textAlign: "center",
-    color: "cornflowerblue",
+    color: "white",
+    fontWeight: 'bold',
   },
   titleBackground: {
-    backgroundColor: "white",
+    // backgroundColor: "white",
   },
 });
 

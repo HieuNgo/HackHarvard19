@@ -10,10 +10,10 @@ import {
 import BouncingPreloader from "react-native-bouncing-preloader";
 
 const icons = [
-  require('./CreditCardImages/Brex.jpg'),
-  require('./CreditCardImages/BankOfAmerica.png'),
-  require('./CreditCardImages/Capital-One-Savor-One-Cash-Back.png'),
-  require('./CreditCardImages/Capital-One®-Venture®-Rewards-Credit-Card.png'),
+  require('./images/card1.png'),
+  require('./images/card2.jpg'),
+  require('./images/card3.png'),
+  require('./images/card4.jpg'),
   require('./CreditCardImages/Citi-costco-anywhere-visa-credit-card.jpg'),
   require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
 ];

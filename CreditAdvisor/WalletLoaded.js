@@ -9,7 +9,8 @@ import {
   Button,
   Alert,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground
 } from "react-native";
 
 export default class WalletLoaded extends Component {
@@ -56,7 +57,6 @@ export default class WalletLoaded extends Component {
 
   GetItem(item) {
   }
-
 
   render() {
     let category = ['Gas', 'Travel', 'Grocery', 'Online Shopping', 'Dining', 'OThers'];
@@ -119,8 +119,6 @@ export default class WalletLoaded extends Component {
         break;
     };
 
-
-
     return (
       <>
       <View style={styles.Image}>
@@ -180,6 +178,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft:20,
     marginRight:20,
+
+  },
+  images: {
+    borderColor: '#f9f9f9',
   }
 
 });

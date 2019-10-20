@@ -9,6 +9,7 @@ import {
   Alert,
   Text,
   StatusBar,
+  ImageBackground
 } from 'react-native';
 
 import {
@@ -28,11 +29,13 @@ export default class CreditCardsScreen extends Component{
   render() {
     return (
       <>
+
+    <ImageBackground source={require('./images/SlightOceanView.jpg')} style={{width: '100%', height: '100%'}}>
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>
         <View style = {styles.titleBackground}>
-        <Text style={styles.title}>My Credit Cards' Points</Text>
+        <Text style={styles.title}> My Credit Cards</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.Image}>
@@ -106,6 +109,7 @@ export default class CreditCardsScreen extends Component{
           />
         </View>
         </ScrollView>
+        </ImageBackground>
         </>
     );
   };

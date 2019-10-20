@@ -41,8 +41,6 @@ class HomeyScreen extends Component{
       <>
 
 
-
-
       <ImageBackground source={require('./images/SlightOceanView.jpg')} style={{width: '100%', height: '100%'}}>
 
       <StatusBar barStyle="dark-content" />
@@ -55,38 +53,27 @@ class HomeyScreen extends Component{
         <View style = {styles.titleBackground}>
           <Text style={styles.title}>Credit Advisor</Text>
         </View>
-
-
-
         <View style={styles.body}>
+          <AwesomeButtonRick
+          style={styles.button}
+          type="secondary"
+          onPress={() => this.props.navigation.navigate('StartSaving')}>
+          Start Saving          </AwesomeButtonRick>
 
+          <AwesomeButtonRick
+          style={styles.button}
+          type="secondary"
+          onPress={() => this.props.navigation.navigate('CreditCards')}>
+          My Credit Card    </AwesomeButtonRick>
 
+          <AwesomeButtonRick
+          style={styles.button}
+          type="secondary"
+          onPress={() => this.props.navigation.navigate('Wallet')}>
+          Pay                         </AwesomeButtonRick>
 
-
-
-            <AwesomeButtonRick
-            style={styles.button}
-            type="secondary"
-            onPress={() => this.props.navigation.navigate('StartSaving')}>
-            Start Saving</AwesomeButtonRick>
-
-
-            <AwesomeButtonRick
-            style={styles.button}
-            type="secondary"
-            onPress={() => this.props.navigation.navigate('CreditCards')}>
-            My Credit Card</AwesomeButtonRick>
-
-
-            <AwesomeButtonRick
-            style={styles.button}
-            type="secondary"
-            onPress={() => this.props.navigation.navigate('Wallet')}>
-                        Pay              </AwesomeButtonRick>
-
-        </View>
+      </View>
       </ScrollView>
-
       </SafeAreaView>
 
       </ImageBackground>
