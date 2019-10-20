@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ScrollView,
   View,
+  Image,
   FlatList,
   Button,
   Alert,
@@ -24,19 +25,55 @@ import {
 
 class Rankings3Screen extends Component {
     render() {
+    const images = [
+        require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
+        require('./CreditCardImages/Capital-One®-Venture®-Rewards-Credit-Card.png'),
+        require('./CreditCardImages/ChasefreedomCreditCard.png'),
+        require('./CreditCardImages/BankOfAmerica.png'),
+        require('./CreditCardImages/Capital-One-Savor-One-Cash-Back.png'),
+        require('./CreditCardImages/BlueCashPreferredAmericanExpress.jpg'),
+        require('./CreditCardImages/USBankCashToe.png'),
+        require('./CreditCardImages/Citi-costco-anywhere-visa-credit-card.jpg'),
+        require('./CreditCardImages/Brex.jpg'),
+        require('./CreditCardImages/mastercard-black-card.jpg'),
+        require('./CreditCardImages/NHL_00_Shield_Card.png'),
+        require('./CreditCardImages/mastercard-titanium-card.png'),
+        require('./CreditCardImages/goldcard.png'),
+        require('./CreditCardImages/CapitalOneQSCreditCard.jpg'),
+        require('./CreditCardImages/discover-it-chrome-for-students-credit-card.png')
+      ];
+      const images1 = [
+        require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
+        require('./CreditCardImages/BankOfAmerica.png'),
+        require('./CreditCardImages/CapitalOneQSCreditCard.jpg'),
+      ];
       var creditcard_name = [
         {
           "name": "Discover it Cash Back",
-          "travel": "1"
+          "gas": "5",
+          "travel": "1",
+          "grocery": "5",
+          "online_shopping": "amazon_5 other_1",
+          "dinning": "5",
+          "others": "1"
         },
         {
           "name": "Bank of America® Cash Rewards credit card",
+          "gas": "3",
           "travel": "3",
+          "grocery": "2",
+          "online_shopping": "1",
+          "dinning": "3",
+          "others": "1"
         },
         {
           "name": "Capital One QuicksilverOne Cash Rewards Credit Card",
           "gas": "1.50",
-          "travel": "1.50"
+          "travel": "1.50",
+          "grocery": "1.50",
+          "online_shopping": "1.50",
+          "dinning": "1.50",
+          "others": "1.50"
         }
       ]
 
@@ -70,11 +107,11 @@ class Rankings3Screen extends Component {
       },
       {
         "name": "Bank of America® Cash Rewards credit card",
-        "gas": "choose1_3",
+        "gas": "3",
         "travel": "3",
         "grocery": "2",
         "online_shopping": "1",
-        "dinning": "choose1_3",
+        "dinning": "3",
         "others": "1"
       },
       {
@@ -121,15 +158,6 @@ class Rankings3Screen extends Component {
         "online_shopping": "0",
         "dinning": "0",
         "others": "0"
-      },
-      {
-        "name": "Discover it Business Card",
-        "gas": "1.50",
-        "travel": "1.50",
-        "grocery": "1.50",
-        "online_shopping": "1.50",
-        "dinning": "1.50",
-        "others": "1.50"
       },
       {
         "name": "Mastercard Black Card",
@@ -184,33 +212,6 @@ class Rankings3Screen extends Component {
         "online_shopping": "1",
         "dinning": "2",
         "others": "1"
-      },
-      {
-        "name": "Discover it Student Cash Back",
-        "gas": "5",
-        "travel": "1",
-        "grocery": "5",
-        "online_shopping": "amazon_5 other_1",
-        "dinning": "5",
-        "others": "1"
-      },
-      {
-        "name": "Discover it Student chrome",
-        "gas": "2",
-        "travel": "1",
-        "grocery": "1",
-        "online_shopping": "1",
-        "dinning": "2",
-        "others": "1"
-      },
-      {
-        "name": "Discover it Secured",
-        "gas": "2",
-        "travel": "1",
-        "grocery": "1",
-        "online_shopping": "1",
-        "dinning": "2",
-        "others": "1"
       }
     ]
 
@@ -222,9 +223,12 @@ class Rankings3Screen extends Component {
       {
         if(data[i+1].travel < data[i].travel)
         {
-            var temp = data[i+1];
+            var temp1 = data[i+1];
             data[i+1] = data[i];
-            data[i] = temp;
+            data[i] = temp1;
+            var temp = images[i+1];
+            images[i+1] = images[i];
+            images[i] = temp;
             sorted = false;
         }
       }
@@ -238,51 +242,91 @@ class Rankings3Screen extends Component {
       {
         if(creditcard_name[i+1].travel < creditcard_name[i].travel)
         {
-            var temp = creditcard_name[i+1];
+            var temp1 = creditcard_name[i+1];
             creditcard_name[i+1] = creditcard_name[i];
-            creditcard_name[i] = temp;
-            newsorted = false;
+            creditcard_name[i] = temp1;
+            var temp = images1[i+1];
+            images1[i+1] = images1[i];
+            images1[i] = temp;
+            sorted = false;
         }
       }
     }
 
 
-      return (
-        <>
-          <Text style={styles.title}>
-            Best Credit Cards For Travel
-          </Text>
-
-          <View style={styles.container}>
-            <FlatList
-              data={[
-                {key: data[18].name},
-                {key: data[17].name},
-                {key: data[16].name},
-                {key: data[15].name},
-                {key: data[14].name}
-              ]}
-              renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-            />
-
-          </View>
-
-          <Text style={styles.body}>
-            Your Credit Card
-          </Text>
-          <View style={styles.container}>
-          <FlatList
-            data={[
-              {key: creditcard_name[2].name},
-              {key: creditcard_name[1].name}
-            ]}
-            renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+    return (
+      <>
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={styles.scrollView}>
+        <Text style={styles.title}>
+          Best Credit Cards For Travel
+        </Text>
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[14]}
           />
-          </View>
-        </>
-      );
-    }
+        </View>
+
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[13]}
+          />
+        </View>
+
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[12]}
+          />
+        </View>
+
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[11]}
+          />
+        </View>
+
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[10]}
+          />
+        </View>
+
+        <Text style={styles.body}>
+          Your Credit Card
+        </Text>
+        <View style={styles.container}>
+
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[2]}
+          />
+        </View>
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[1]}
+          />
+        </View>
+
+        <View style={styles.Image}>
+          <Image
+            style={{width: 350, height: 200}}
+            source={images[0]}
+          />
+        </View>
+        </View>
+      </ScrollView>
+      </>
+    );
   }
+}
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
@@ -306,13 +350,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     height: 44,
   },
+  Image: {
+    alignItems: 'center',
+    marginTop: 15,
+    marginBottom: 15,
+  },
   body: {
     textAlign: "center",
     color: "cornflowerblue",
     fontSize: 25,
     marginLeft: 30,
     marginRight: 30,
-    marginBottom: 0
+    marginTop: 20
   },
   button: {
     marginTop: 70,

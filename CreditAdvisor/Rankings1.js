@@ -25,23 +25,30 @@ import {
 
 class Rankings1Screen extends Component {
     render() {
-    /*  const images = [
+    const images = [
         require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
         require('./CreditCardImages/Capital-One®-Venture®-Rewards-Credit-Card.png'),
         require('./CreditCardImages/ChasefreedomCreditCard.png'),
         require('./CreditCardImages/BankOfAmerica.png'),
         require('./CreditCardImages/Capital-One-Savor-One-Cash-Back.png'),
         require('./CreditCardImages/BlueCashPreferredAmericanExpress.jpg'),
-        require('./CreditCardImages/us-ban-cash_toe.png'),
+        require('./CreditCardImages/USBankCashToe.png'),
         require('./CreditCardImages/Citi-costco-anywhere-visa-credit-card.jpg'),
         require('./CreditCardImages/Brex.jpg'),
         require('./CreditCardImages/mastercard-black-card.jpg'),
         require('./CreditCardImages/NHL_00_Shield_Card.png'),
         require('./CreditCardImages/mastercard-titanium-card.png'),
         require('./CreditCardImages/goldcard.png'),
-        require('./CreditCardImages/ChaseSapphirePrefferredCreditCard.jpg'),
-        require('./CreditCardImages/CapitalOneVentureOne.jpg'),
-      ]; */
+        require('./CreditCardImages/CapitalOneQSCreditCard.jpg'),
+        require('./CreditCardImages/discover-it-chrome-for-students-credit-card.png')
+      ];
+
+    const images1 = [
+        require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
+        require('./CreditCardImages/BankOfAmerica.png'),
+        require('./CreditCardImages/CapitalOneQSCreditCard.jpg'),
+      ];
+
       var creditcard_name = [
         {
           "name": "Discover it Cash Back",
@@ -210,28 +217,6 @@ class Rankings1Screen extends Component {
       }
     ]
 
-    // var sorted = [
-    //   {
-    //     "name": "name0",
-    //     "travel": "666"
-    //   }
-    // ]
-    // var pivot = data[18].travel;
-    // var i = 0;
-    //
-    // for(var j=0; j<= 17; j++)
-    // {
-    //   if(data[j].travel< pivot)
-    //   {
-    //     i++;
-    //     var temp = data[i];
-    //     data[i] = data[j];
-    //     data[j] = temp;
-    //   }
-    // }
-    // var temp2 = data[i+1];
-    // data[i+1] = data[j];
-    // data[j] = temp2;
     var sorted = false;
     while(!sorted)
     {
@@ -240,9 +225,12 @@ class Rankings1Screen extends Component {
       {
         if(data[i+1].gas < data[i].gas)
         {
-            var temp = data[i+1];
+            var temp1 = data[i+1];
             data[i+1] = data[i];
-            data[i] = temp;
+            data[i] = temp1;
+            var temp = images[i+1];
+            images[i+1] = images[i];
+            images[i] = temp;
             sorted = false;
         }
       }
@@ -256,77 +244,87 @@ class Rankings1Screen extends Component {
       {
         if(creditcard_name[i+1].gas < creditcard_name[i].gas)
         {
-            var temp = creditcard_name[i+1];
+            var temp1 = creditcard_name[i+1];
             creditcard_name[i+1] = creditcard_name[i];
-            creditcard_name[i] = temp;
-            newsorted = false;
+            creditcard_name[i] = temp1;
+            var temp = images1[i+1];
+            images1[i+1] = images1[i];
+            images1[i] = temp;
+            sorted = false;
         }
       }
     }
 
-    // var least_index = 666;
-    // var least = 666;
-    // for(i=0; i<19; i++)
-    // {
-    //   //var list_name = data[i].name;
-    //
-    //   var grocery = data[i].travel;
-    //
-    //   for(var j=0; j<19; j++)
-    //   {
-    //     if(grocery < least)
-    //     {
-    //       least = travel;
-    //       least_index = i;
-    //     }
-    //   }
-    // }
-
-  //  best_travel_cc = data[greatest_index].name;
-    // var greatest = '69';
-    // var great_int = Number(greatest)
-    //
-    // if(great_int < 59)
-    // {
-    //   var toPrint = 'works';
-    // }
-    // else {
-    //   var toPrint = 'works like a charm';
-    // }
-    // var yoyo = data[1].name[2];
-
       return (
         <>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}>
           <Text style={styles.title}>
             Best Credit Cards For Gas
           </Text>
-
-          <View style={styles.container}>
-            <FlatList
-              data={[
-                {key: data[18].name},
-                {key: data[17].name},
-                {key: data[16].name},
-                {key: data[15].name},
-                {key: data[14].name}
-              ]}
-              renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+          <View style={styles.Image}>
+            <Image
+              style={{width: 350, height: 200}}
+              source={images[14]}
             />
+          </View>
 
+          <View style={styles.Image}>
+            <Image
+              style={{width: 350, height: 200}}
+              source={images[13]}
+            />
+          </View>
+
+          <View style={styles.Image}>
+            <Image
+              style={{width: 350, height: 200}}
+              source={images[12]}
+            />
+          </View>
+
+          <View style={styles.Image}>
+            <Image
+              style={{width: 350, height: 200}}
+              source={images[11]}
+            />
+          </View>
+
+          <View style={styles.Image}>
+            <Image
+              style={{width: 350, height: 200}}
+              source={images[10]}
+            />
           </View>
 
           <Text style={styles.body}>
             Your Credit Card
           </Text>
           <View style={styles.container}>
-          <FlatList
-            data={[
-              {key: creditcard_name[2].name},
-              {key: creditcard_name[1].name}
-            ]}
-            renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-          />
+
+          <View style={styles.Image}>
+            <Image
+              style={{width: 350, height: 200}}
+              source={images[2]}
+            />
           </View>
+          <View style={styles.Image}>
+            <Image
+              style={{width: 350, height: 200}}
+              source={images[1]}
+            />
+          </View>
+
+          <View style={styles.Image}>
+            <Image
+              style={{width: 350, height: 200}}
+              source={images[0]}
+            />
+          </View>
+
+          </View>
+        </ScrollView>
         </>
       );
     }
@@ -349,6 +347,11 @@ const styles = StyleSheet.create({
    flex: 1,
    paddingTop: 22
   },
+  Image: {
+    alignItems: 'center',
+    marginTop: 15,
+    marginBottom: 15,
+  },
   item: {
     padding: 10,
     fontSize: 14,
@@ -360,7 +363,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginLeft: 30,
     marginRight: 30,
-    marginBottom: 0
+    marginTop: 20
   },
   button: {
     marginTop: 70,
