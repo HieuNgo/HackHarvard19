@@ -25,32 +25,43 @@ import Svg,{
 
 import BouncingPreloader from "react-native-bouncing-preloader";
 
+import WalletLoaded from './WalletLoaded'
+import WalletLoading from './WalletLoading'
+
 const icons = [
-  require('./images/AmericanExpress.jpg'),
-  require('./images/BankOfAmerica.jpg'),
-  require('./images/citiBank.jpg'),
-  require('./images/Paypal.jpg'),
-  require('./images/USBank.jpg'),
-  require('./images/VIbeCreditUnion.jpg'),
+  require('./CreditCardImages/Brex.jpg'),
+  require('./CreditCardImages/BankOfAmerica.png'),
+  require('./CreditCardImages/Capital-One-Savor-One-Cash-Back.png'),
+  require('./CreditCardImages/Capital-One®-Venture®-Rewards-Credit-Card.png'),
+  require('./CreditCardImages/Citi-costco-anywhere-visa-credit-card.jpg'),
+  require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
 ];
 
 export default class Wallet extends Component {
+  constructor(props){
+   super(props)
+   this.state = {
+    component : <WalletLoading />
+   }
+  }
+
+
+  componentDidMount(){
+
+       // Start counting when the page is loaded
+       this.timeoutHandle = setTimeout(()=>{
+            // Add your logic for the transition
+            this.setState({ component: <WalletLoaded /> })
+       }, 2000);
+  }
+
+  componentWillUnmount(){
+       clearTimeout(this.timeoutHandle);
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <BouncingPreloader
-          icons={icons}
-          leftDistance={-100}
-          rightDistance={-150}
-          speed={1000}
-          onLoad={ () =>    {
-            setTimeout(function(){
-            //Put All Your Code Here, Which You Want To Execute After Some Delay Time.
-            Alert.alert("Alert Shows After 5 Seconds of Delay.")
-          }, 2000);}
-          }
-        />
-      </View>
+      this.state.component
     );
   }
 }

@@ -28,13 +28,16 @@ import {
 
 import StartSavingScreen from './StartSaving';
 import HomeyScreen from './Home';
-import SettingsScreen from './Settings';
 import WalletScreen from './Wallet';
-import PurchaseHistoryScreen from './PurchaseHistory';
-import RankingsScreen from './Rankings';
 import CreditCardsScreen from './CreditCards';
 import CCFormScreen from './CCForm';
 import SvgExample from './SvgExample';
+import WalletLoaded from './WalletLoaded';
+import WalletLoading from './WalletLoading';
+import Rankings1Screen from './Rankings1';
+import Rankings2Screen from './Rankings2';
+import Rankings3Screen from './Rankings3';
+import Rankings4Screen from './Rankings4';
 
 
 const HomeScreen: () => React$Node = () => {
@@ -85,28 +88,21 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
-// const mainNavigator = createBottomTabNavigator({
-//   Home: {screen: HomeyScreen},
-//   PurchaseHistory: {screen: PurchaseHistoryScreen},
-//   StartSaving: {screen: StartSavingScreen},
-//   //Wallet: {screen: WalletScreen},
-//   Rankings: {screen: RankingsScreen},
-//   CreditCards: {screen: CreditCardsScreen},
-//   CCForm: {screen: CCFormScreen},
-//   Settings: {screen: SettingsScreen},
-//
-// });
 
 const stackNavigator = createStackNavigator({
   Home: {screen: HomeyScreen},
-  PurchaseHistory: {screen: PurchaseHistoryScreen},
   StartSaving: {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
-  Rankings: {screen: RankingsScreen},
   CreditCards: {screen: CreditCardsScreen},
-  CCForm: {screen: CCFormScreen},
-  Settings: {screen: SettingsScreen},
   SvgExample: {screen: SvgExample}
+  CCFormScreen: {screen: CCFormScreen},
+  WalletLoaded: {screen: WalletLoaded},
+  WalletLoading: {screen: WalletLoading},
+  Rankings1: {screen: Rankings1Screen},
+  Rankings2: {screen: Rankings2Screen},
+  Rankings3: {screen: Rankings3Screen},
+  Rankings4: {screen: Rankings4Screen},
+
   },
   {
     initialRouteName: 'Home',
