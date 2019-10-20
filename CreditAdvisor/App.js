@@ -31,12 +31,15 @@ import HomeyScreen from './Home';
 import SettingsScreen from './Settings';
 import WalletScreen from './Wallet';
 import PurchaseHistoryScreen from './PurchaseHistory';
-import RankingsScreen from './Rankings';
-import CreditCardsScreen from './CreditCards';
-import CCFormScreen from './CCForm';
 import WalletLoaded from './WalletLoaded';
 import WalletLoading from './WalletLoading';
 import PointsTracking from './PointsTracking';
+import Rankings1Screen from './Rankings1';
+import Rankings2Screen from './Rankings2';
+import Rankings3Screen from './Rankings3';
+import Rankings4Screen from './Rankings4';
+import CreditCardScreen from './CreditCards';
+import CCFormScreen from './CCForm';
 
 
 const HomeScreen: () => React$Node = () => {
@@ -87,21 +90,10 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
-// const mainNavigator = createBottomTabNavigator({
-//   Home: {screen: HomeyScreen},
-//   PurchaseHistory: {screen: PurchaseHistoryScreen},
-//   StartSaving: {screen: StartSavingScreen},
-//   //Wallet: {screen: WalletScreen},
-//   Rankings: {screen: RankingsScreen},
-//   CreditCards: {screen: CreditCardsScreen},
-//   CCForm: {screen: CCFormScreen},
-//   Settings: {screen: SettingsScreen},
-//
-// });
-
-const stackNavigator = createStackNavigator({
-  Home: {screen: HomeyScreen},
   PurchaseHistory: {screen: PurchaseHistoryScreen},
+
+const StackNavigator = createStackNavigator({
+  Home: {screen: HomeyScreen},
   StartSaving: {screen: StartSavingScreen},
   Wallet: {screen: WalletScreen},
   Rankings: {screen: RankingsScreen},
@@ -114,9 +106,17 @@ const stackNavigator = createStackNavigator({
   },
   {
     initialRouteName: 'Home',
+  Settings: {screen: SettingsScreen},
+  CreditCards: {screen: CreditCardScreen},
+  Rankings1: {screen: Rankings1Screen},
+  Rankings2: {screen: Rankings2Screen},
+  Rankings3: {screen: Rankings3Screen},
+  Rankings4: {screen: Rankings4Screen},
+  PurchaseHistory: {screen: PurchaseHistoryScreen},
+
   })
 
-const AppContainer = createAppContainer(stackNavigator);
+const App = createAppContainer(StackNavigator);
 
 
 export default class App extends Component {

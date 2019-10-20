@@ -25,10 +25,16 @@ import {
 
 
 class CCFormScreen extends React.Component {
-  // handleInput() {
-  //   console.log("Enter Input");
-  // }
-  state = { toggle: false };
+  constructor(props) {
+    super(props);
+    this.state = {name: ''};
+    this.state = {cc_name: ''};
+    this.state = {ccn: ''};
+    this.state = {exp_date: ''};
+    this.state = {cvv_num: ''};
+
+  }
+
   render() {
     return(
       <>
@@ -41,21 +47,36 @@ class CCFormScreen extends React.Component {
         style={styles.textInput}
         placeholder="Your name"
         maxLength={20}
+        onChangeText={(name) => this.setState({name})}
+        value={this.state.name}
+      />
+      <TextInput
+        style={styles.textInput}
+        placeholder="Credit Card Name"
+        maxLength={20}
+        onChangeText={(cc_name) => this.setState({cc_name})}
+        value={this.state.cc_name}
       />
       <TextInput
         style={styles.textInput}
         placeholder="Card Number"
         maxLength={20}
+        onChangeText={(ccn) => this.setState({ccn})}
+        value={this.state.ccn}
       />
       <TextInput
         style={styles.textInput}
         placeholder="Expriration Date"
         maxLength={20}
+        onChangeText={(exp_date) => this.setState({exp_date})}
+        value={this.state.exp_date}
       />
       <TextInput
         style={styles.textInput}
         placeholder="CCV"
         maxLength={20}
+        onChangeText={(ccv_num) => this.setState({ccv_num})}
+        value={this.state.ccv_num}
       />
       <TextInput
         style={styles.textInput}
@@ -72,9 +93,19 @@ class CCFormScreen extends React.Component {
         placeholder="ZIP"
         maxLength={20}
       />
+
+
+
+      <View style = {styles.titleBackground}>
+      <Text style={styles.body}>
+      {this.state.cc_name}
+      </Text>
+      </View>
+
+
       <View style={styles.button}>
         <Button title="Submit"
-
+        onPress={() => this.props.navigation.navigate('CCForm')}
         />
       </View>
 
