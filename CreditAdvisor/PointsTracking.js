@@ -5,11 +5,12 @@ import {
   StyleSheet,
   Animated,
   Easing,
+  ScrollView,
   TouchableOpacity
 } from "react-native";
 import BouncingPreloader from "react-native-bouncing-preloader";
 
-import WalletLoaded from './WalletLoaded'
+import Points from './Points'
 import WalletLoading from './WalletLoading'
 
 const icons = [
@@ -21,7 +22,7 @@ const icons = [
   require('./CreditCardImages/discover-it-cashback-match-012518-1.png'),
 ];
 
-export default class Wallet extends Component {
+export default class PointsTracking extends Component {
   constructor(props){
    super(props)
    this.state = {
@@ -35,8 +36,8 @@ export default class Wallet extends Component {
        // Start counting when the page is loaded
        this.timeoutHandle = setTimeout(()=>{
             // Add your logic for the transition
-            this.setState({ component: <WalletLoaded /> })
-       }, 2000);
+            this.setState({ component: <Points /> })
+       }, 100);
   }
 
   componentWillUnmount(){

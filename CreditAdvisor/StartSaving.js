@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {createStackNavigator} from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import {createAppContainer} from 'react-navigation';
+import {withNavigation, createAppContainer} from 'react-navigation';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,7 +10,7 @@ import {
   Alert,
   Text,
   StatusBar,
-  Button,
+  Button
 } from 'react-native';
 
 import {

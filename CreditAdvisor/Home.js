@@ -25,16 +25,6 @@ import {
 class HomeyScreen extends Component{
   //state object
   state = { toggle: false };
-  selectedDate = new Date();
-
-  generateDates = (hours, minutes) => {
-    const date = new Date();
-    date.setHours(date.getHours() + hours);
-    if (minutes != null) {
-      date.setMinutes(minutes);
-    }
-    return date;
-  };
 
   render() {
     return (
@@ -45,7 +35,7 @@ class HomeyScreen extends Component{
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>
         <View style = {styles.titleBackground}>
-          <Text style={styles.title}>Home</Text>
+          <Text style={styles.title}>Credit Advisor</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.sectionContainer}>
@@ -63,14 +53,10 @@ class HomeyScreen extends Component{
             </View>
             <View style={styles.button}>
               <Button
+                title="Pay"
+                onPress={() => this.props.navigation.navigate('Wallet')}
                 title="Purchase History"
                 onPress={() => this.props.navigation.navigate('PurchaseHistory')}
-              />
-            </View>
-            <View style={styles.button}>
-              <Button
-                title="Learn More"
-                onPress={() => this.props.navigation.navigate('LearnMore')}
               />
             </View>
           </View>
